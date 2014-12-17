@@ -14,11 +14,13 @@ npm install sutest -g
 
 Write your test script file:
 
-```
+```js
 module.exports = function (unitTest) {
+
 	unitTest.AddTest ('AdditionTest', function (test) {
 		test.Assert (2 + 3 == 5);
 	});
+	
 };
 ```
 
@@ -26,4 +28,64 @@ Run the test from command line:
 
 ```
 sutest mytestfile.js
+```
+
+Create suites
+-------------
+
+You can create test suites, and add tests to suites:
+
+```js
+module.exports = function (unitTest) {
+
+	var opTestSuite = unitTest.AddTestSuite ('OperationsTest');
+	
+	opTestSuite.AddTest ('AdditionTest', function (test) {
+		test.Assert (2 + 3 == 5);
+	});
+	
+	opTestSuite.AddTest ('SubtractionTest', function (test) {
+		test.Assert (2 - 3 == -1);
+	});
+	
+};
+```
+
+Include modules
+---------------
+
+You can add non-node modules, and use it in your tests.
+
+For example, create a module with this content:
+
+```js
+function Addition (a, b)
+{
+	return a + b;
+}
+
+function Subtraction (a, b)
+{
+	return a - b;
+}
+```
+
+Now you can add this module to your test: 
+
+```js
+module.exports = function (unitTest) {
+
+	unitTest.AddSourceFile ('./operationsmodule.js');
+	
+	var opTestSuiteLib = unitTest.AddTestSuite ('OperationsTestFromLib');
+	
+	opTestSuiteLib.AddTest ('AdditionTest', function (test) {
+		test.Assert (Addition (2, 3) == 5);
+	});
+	
+	opTestSuiteLib.AddTest ('SubtractionTest', function (test) {
+		test.Assert (Subtraction (2, 3) == -1);
+	});
+	
+};
 ```

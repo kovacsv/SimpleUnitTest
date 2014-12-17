@@ -1,0 +1,31 @@
+{
+	"name": "sutest",
+	"description": "Simple unit test framework for not node specific javascript modules.",
+	"author": {
+		"name": "Viktor Kovacs",
+		"url": "http://www.kovacsv.hu"
+	},
+	"version": "0.1.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kovacsv/SimpleUnitTest"
+	},
+	"bugs": {
+		"url": "https://github.com/kovacsv/SimpleUnitTest/issues"
+	},	
+	"bin": {
+		"sutest": "./index.js"
+	},
+	"keywords": [
+		"javascript",
+		"unit",
+		"test",
+		"unittest"
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/kovacsv/SimpleUnitTest/blob/master/LICENSE.md"
+		}
+	]
+}

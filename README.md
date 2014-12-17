@@ -1,7 +1,7 @@
 SimpleUnitTest
 ==============
 
-Simple unit test framework for not node specific javascript modules.
+Simple unit test framework for not node based javascript modules.
 
 Usage
 -----
@@ -54,7 +54,7 @@ module.exports = function (unitTest) {
 Include modules
 ---------------
 
-You can add non-node modules, and use them in your tests.
+You can add not node based modules, and use them in your tests.
 
 For example, create a module with this content:
 

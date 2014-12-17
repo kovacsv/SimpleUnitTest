@@ -1,11 +1,11 @@
 {
 	"name": "sutest",
-	"description": "Simple unit test framework for not node specific javascript modules.",
+	"description": "Simple unit test framework for not node based javascript modules.",
 	"author": {
 		"name": "Viktor Kovacs",
 		"url": "http://www.kovacsv.hu"
 	},
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/kovacsv/SimpleUnitTest"

@@ -54,7 +54,7 @@ module.exports = function (unitTest) {
 Include modules
 ---------------
 
-You can add non-node modules, and use it in your tests.
+You can add non-node modules, and use them in your tests.
 
 For example, create a module with this content:
 

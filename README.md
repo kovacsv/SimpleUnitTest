@@ -9,7 +9,7 @@ Usage
 Install the package with npm:
 
 ```
-npm install sutest -g
+npm install -g sutest
 ```
 
 Write your test script file:

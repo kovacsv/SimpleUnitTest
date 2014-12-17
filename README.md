@@ -89,3 +89,18 @@ module.exports = function (unitTest) {
 	
 };
 ```
+
+Create multiple test files
+--------------------------
+
+You can create multiple test files, and call them from a main test file:
+
+```js
+module.exports = function (unitTest)
+{
+
+	unitTest.AddTestFile ('additiontest.js');
+	unitTest.AddTestFile ('subtractiontest.js');
+
+};
+```

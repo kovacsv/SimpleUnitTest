@@ -135,7 +135,7 @@ opTestSuite.AddTest ('SubtractionTest', function (test) {
 unitTest.Run ();
 ```
 
-Run the file:
+Run the test from command line:
 
 ```
 node mytestfile.js

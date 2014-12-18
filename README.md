@@ -99,8 +99,44 @@ You can create multiple test files, and call them from a main test file:
 module.exports = function (unitTest)
 {
 
-	unitTest.AddTestFile ('additiontest.js');
-	unitTest.AddTestFile ('subtractiontest.js');
+	unitTest.AddTestFile ('./additiontest.js');
+	unitTest.AddTestFile ('./subtractiontest.js');
 
 };
+```
+
+Usage as library
+----------------
+
+Install the package locally:
+
+```
+npm install sutest
+```
+
+Create your standalone test file:
+
+```js
+var path = require ('path');
+var dirName = path.dirname (require.main.filename);
+
+var sutest = require ('sutest');
+var unitTest = new sutest.UnitTest (dirName, process.argv);
+
+var opTestSuite = unitTest.AddTestSuite ('OperationsTest');
+opTestSuite.AddTest ('AdditionTest', function (test) {
+	test.Assert (2 + 3 == 5);
+});
+
+opTestSuite.AddTest ('SubtractionTest', function (test) {
+	test.Assert (2 - 3 == -1);
+});
+
+unitTest.Run ();
+```
+
+Run the file:
+
+```
+node mytestfile.js
 ```

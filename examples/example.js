@@ -27,4 +27,13 @@ module.exports = function (unitTest) {
 	opTestSuiteLib.AddTest ('SubtractionTest', function (test) {
 		test.Assert (Subtraction (2, 3) == -1);
 	});	
+	
+	var assertTestSuite = unitTest.AddTestSuite ('AssertTypesTest');
+	assertTestSuite.AddTest ('AssertTest', function (test) {
+		test.Assert (2 + 3 == 5);
+		test.AssertEqual (2 + 3, 5);
+		test.AssertEqualNum (2 + 3, 5, 0.1);
+		test.AssertEqualNum (2 + 3, 4, 1.1);
+		test.AssertEqualNum (2 + 3, 6, 1.1);
+	});	
 };
